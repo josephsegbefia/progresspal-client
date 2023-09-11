@@ -7,7 +7,10 @@ export const Wrapper = styled.section`
 const teal = "#008080";
 
 // Styled components for the navigation bar
-export const NavbarWrapper = styled.div`
+export const NavbarWrapper = styled.div.attrs((props) => ({
+  // Filter out the 'isOpen' prop
+  isOpen: undefined
+}))`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,10 +24,10 @@ export const NavbarWrapper = styled.div`
   z-index: 100;
   transition: background-color 0.3s ease;
 
-  // @media screen and (max-width: 768px) {
-  //   background-color: ${(props) => (props.isOpen ? "white" : "transparent")};
-  //   transition: background-color 0.3s ease;
-  // }
+  @media screen and (max-width: 768px) {
+    background-color: ${(props) => (props.isOpen ? "white" : "transparent")};
+    transition: background-color 0.3s ease;
+  }
 `;
 
 export const NavbarLogo = styled.a`
