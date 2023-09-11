@@ -145,3 +145,67 @@ export const GridItem = styled.div`
     grid-row: span 1;
   }
 `;
+
+// Sign up Form
+
+export const SignUpWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  margin-top: 50px;
+  margin-right: 20px;
+  margin-left: 20px;
+`;
+
+export const FormWrapper = styled.div`
+  max-width: 400px;
+  margin: 15rem auto;
+
+  @media screen and (max-width: 576px) {
+    max-width: 200px;
+    margin: 5rem auto;
+  }
+`;
+
+export const FormGroup = styled.div`
+  margin-bottom: 20px;
+`;
+
+export const Label = styled.label`
+  color: ${teal};
+  font-weight: bold;
+`;
+
+export const InputWrapper = styled.div`
+  position: relative;
+`;
+
+export const Input = styled.input`
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #ff6b6b;
+  font-family: "Courier Prime", sans-serif;
+`;
+
+export const EyeButton = styled.button`
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+`;
+
+export const SubmitButton = styled.button`
+  width: 100%;
+  padding: 10px;
+  background-color: ${teal};
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+`;

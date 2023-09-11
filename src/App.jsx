@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Home from "./components/pages/Home";
+import SignUp from "./components/pages/Signup";
 import GlobalStyles from "./components/styled/global";
 import { Route, Routes } from "react-router-dom";
 
@@ -13,6 +14,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
     </div>
   );
