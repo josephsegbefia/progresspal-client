@@ -1,4 +1,7 @@
 import { useState } from "react";
+// import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../context/auth.context";
 
 import {
   NavbarWrapper,
@@ -6,11 +9,14 @@ import {
   HamburgerMenu,
   HamburgerLine,
   NavbarLinks,
-  NavbarLink
+  NavbarLink,
+  LinkItem
 } from "../components/styled/styled";
 
 const Navbar = () => {
   const [isOpened, setIsOpened] = useState(false);
+
+  const { isLoggedIn, user } = useContext(AuthContext);
 
   const toggleNavbar = () => {
     setIsOpened(!isOpened);
@@ -25,12 +31,34 @@ const Navbar = () => {
         <HamburgerLine isOpen={isOpened} />
       </HamburgerMenu>
       <NavbarLinks isOpen={isOpened}>
-        <NavbarLink href="#">Home</NavbarLink>
-        <NavbarLink href="#">Profile</NavbarLink>
-        <NavbarLink href="#">Projects</NavbarLink>
-        <NavbarLink href="#">Log In</NavbarLink>
-        <NavbarLink href="#">Log Out</NavbarLink>
-        <NavbarLink href="#">Sign Up</NavbarLink>
+        <LinkItem to="/">
+          <NavbarLink>Home</NavbarLink>
+        </LinkItem>
+
+        {isLoggedIn && (
+          <>
+            <LinkItem to="/profile">
+              <NavbarLink>Profile</NavbarLink>
+            </LinkItem>
+            <LinkItem to="/projects">
+              <NavbarLink>Projects</NavbarLink>
+            </LinkItem>
+            <LinkItem>
+              <NavbarLink>Log out</NavbarLink>
+            </LinkItem>
+          </>
+        )}
+
+        {!isLoggedIn && (
+          <>
+            <LinkItem to="/login">
+              <NavbarLink>Log In</NavbarLink>
+            </LinkItem>
+            <LinkItem to="/signup">
+              <NavbarLink>Sign Up</NavbarLink>
+            </LinkItem>
+          </>
+        )}
       </NavbarLinks>
     </NavbarWrapper>
   );

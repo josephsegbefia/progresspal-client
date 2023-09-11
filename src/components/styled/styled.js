@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Wrapper = styled.section`
   background-color: papayawhip;
@@ -15,7 +16,6 @@ export const NavbarWrapper = styled.div.attrs((props) => ({
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-
   background-color: transparent;
   position: fixed;
   top: 0;
@@ -57,14 +57,19 @@ export const NavbarLinks = styled.div`
   }
 `;
 
-export const NavbarLink = styled.a`
+export const NavbarLink = styled.li`
   color: ${teal};
   text-decoration: none;
   cursor: pointer;
+  list-style: none;
 
   &:hover {
     text-decoration: underline;
   }
+`;
+
+export const LinkItem = styled(Link)`
+  text-decoration: none;
 `;
 
 export const HamburgerMenu = styled.div`
