@@ -26,9 +26,11 @@ const Navbar = () => {
       </HamburgerMenu>
       <NavbarLinks isOpen={isOpened}>
         <NavbarLink href="#">Home</NavbarLink>
-        <NavbarLink href="#">About</NavbarLink>
-        <NavbarLink href="#">Services</NavbarLink>
-        <NavbarLink href="#">Contact</NavbarLink>
+        <NavbarLink href="#">Profile</NavbarLink>
+        <NavbarLink href="#">Projects</NavbarLink>
+        <NavbarLink href="#">Log In</NavbarLink>
+        <NavbarLink href="#">Log Out</NavbarLink>
+        <NavbarLink href="#">Sign Up</NavbarLink>
       </NavbarLinks>
     </NavbarWrapper>
   );

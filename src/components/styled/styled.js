@@ -15,7 +15,7 @@ export const NavbarWrapper = styled.div.attrs((props) => ({
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  // margin-bottom: 10rem;
+
   background-color: transparent;
   position: fixed;
   top: 0;
