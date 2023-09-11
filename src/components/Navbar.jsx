@@ -10,21 +10,21 @@ import {
 } from "../components/styled/styled";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpened, setIsOpened] = useState(false);
 
   const toggleNavbar = () => {
-    setIsOpen(!isOpen);
+    setIsOpened(!isOpened);
   };
 
   return (
-    <NavbarWrapper isOpen={isOpen}>
+    <NavbarWrapper isOpen={isOpened}>
       <NavbarLogo href="#">Your Logo</NavbarLogo>
       <HamburgerMenu onClick={toggleNavbar}>
-        <HamburgerLine isOpen={isOpen} />
-        <HamburgerLine isOpen={isOpen} />
-        <HamburgerLine isOpen={isOpen} />
+        <HamburgerLine isOpen={isOpened} />
+        <HamburgerLine isOpen={isOpened} />
+        <HamburgerLine isOpen={isOpened} />
       </HamburgerMenu>
-      <NavbarLinks isOpen={isOpen}>
+      <NavbarLinks isOpen={isOpened}>
         <NavbarLink href="#">Home</NavbarLink>
         <NavbarLink href="#">About</NavbarLink>
         <NavbarLink href="#">Services</NavbarLink>

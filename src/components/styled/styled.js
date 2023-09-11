@@ -12,6 +12,7 @@ export const NavbarWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  // margin-bottom: 10rem;
   background-color: transparent;
   position: fixed;
   top: 0;
@@ -20,10 +21,10 @@ export const NavbarWrapper = styled.div`
   z-index: 100;
   transition: background-color 0.3s ease;
 
-  @media screen and (max-width: 768px) {
-    background-color: ${(props) => (props.isOpen ? "white" : "transparent")};
-    transition: background-color 0.3s ease;
-  }
+  // @media screen and (max-width: 768px) {
+  //   background-color: ${(props) => (props.isOpen ? "white" : "transparent")};
+  //   transition: background-color 0.3s ease;
+  // }
 `;
 
 export const NavbarLogo = styled.a`
@@ -93,4 +94,46 @@ export const HamburgerLine = styled.div`
       transform: rotate(45deg) translate(-5px, -6px);
     }
   `}
+`;
+
+//Styled Components for the HomePage
+const borderColor = "#333"; // Color that pairs well with teal
+
+// Styled components for the grid
+export const HomePageWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  position: relative;
+  grid-gap: 20px;
+  margin-top: 50px;
+  margin-right: 20px;
+  margin-left: 20px;
+
+  @media screen and (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4.5, 1fr);
+  }
+
+  @media screen and (max-width: 576px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto; // Each grid item takes up one row
+  }
+`;
+
+export const GridItem = styled.div`
+  background-color: ${teal};
+  color: white;
+  padding: 20px;
+
+  border: 2px solid ${borderColor};
+
+  @media screen and (max-width: 992px) {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  @media screen and (max-width: 576px) {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
 `;
