@@ -16,7 +16,7 @@ import {
 const Navbar = () => {
   const [isOpened, setIsOpened] = useState(false);
 
-  const { isLoggedIn, user } = useContext(AuthContext);
+  const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
   const toggleNavbar = () => {
     setIsOpened(!isOpened);

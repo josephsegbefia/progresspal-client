@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/auth.context";
 import axios from "axios";
 import {
   FormGroup,
@@ -19,6 +20,8 @@ const Login = () => {
 
   const navigate = useNavigate();
 
+  const { storeToken, authenticateUser } = useContext(AuthContext);
+
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
@@ -36,6 +39,8 @@ const Login = () => {
       .post(`${API_URL}/auth/login`, requestBody)
       .then((response) => {
         console.log("JWT token", response.data.authToken);
+        storeToken(response.data.authToken);
+        authenticateUser();
       })
       .catch((error) => {
         console.log(error);
@@ -63,6 +68,7 @@ const Login = () => {
             <Label htmlFor="password">Password</Label>
             <InputWrapper>
               <Input
+                type="password"
                 id="password"
                 placeholder="*******"
                 value={password}
