@@ -184,7 +184,7 @@ export const InputWrapper = styled.div`
 `;
 
 export const Input = styled.input`
-  width: 90%;
+  width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -192,28 +192,18 @@ export const Input = styled.input`
   font-family: "Courier Prime", sans-serif;
 `;
 
-export const EyeButton = styled.button`
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-`;
-
 export const SubmitButton = styled.button`
-  width: 100%;
   padding: 10px;
   background-color: ${teal};
   color: white;
-  border: none;
+  border: 1px solid white;
   border-radius: 4px;
   cursor: pointer;
-  font-weight: bold;
+  // font-weight: bold;
+  font-family: "Courier Prime", sans-serif;
 `;
 
-export const pWrapper = styled.p`
+export const Pwrapper = styled.p`
 position: absolute,
 top: 50%,
 left: 50%,
