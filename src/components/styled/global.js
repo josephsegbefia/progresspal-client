@@ -11,9 +11,6 @@ const GlobalStyles = createGlobalStyle`
     color: #ff6b6b;
     font-family: 'Courier Prime', sans-serif;
   }
-
-  
-  @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
 `;
 
 export default GlobalStyles;

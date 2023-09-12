@@ -17,11 +17,11 @@ export const NavbarWrapper = styled.div.attrs((props) => ({
   align-items: center;
   padding: 1rem;
   background-color: transparent;
-  position: fixed;
+
   top: 0;
   left: 0;
   width: 90%;
-  z-index: 100;
+
   transition: background-color 0.3s ease;
 
   @media screen and (max-width: 768px) {
@@ -151,15 +151,18 @@ export const GridItem = styled.div`
 export const SignUpWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
-  margin-top: 50px;
+  grid-gap: 30px;
   margin-right: 20px;
   margin-left: 20px;
+
+  @media screen and (max-width: 992px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const FormWrapper = styled.div`
   max-width: 400px;
-  margin: 15rem auto;
+  margin: 5rem auto;
 
   @media screen and (max-width: 576px) {
     max-width: 200px;
@@ -208,4 +211,11 @@ export const SubmitButton = styled.button`
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
+`;
+
+export const pWrapper = styled.p`
+position: absolute,
+top: 50%,
+left: 50%,
+transform: translate(-50%, -50%)
 `;

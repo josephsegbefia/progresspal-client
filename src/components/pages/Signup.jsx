@@ -8,7 +8,8 @@ import {
   Input,
   SubmitButton,
   SignUpWrapper,
-  GridItem
+  GridItem,
+  pWrapper
 } from "../styled/styled";
 
 const SignUp = () => {
@@ -25,7 +26,23 @@ const SignUp = () => {
 
   return (
     <SignUpWrapper>
-      <GridItem>First Item</GridItem>
+      <GridItem
+        style={{
+          textAlign: "center",
+          //   width: "88%",
+          //   height: "50vh",
+          position: "relative"
+        }}
+      >
+        <h2>Sign Up</h2>
+        <br />
+        <br />
+        <pWrapper>
+          Do you always feel stuck when it comes to planning and plotting 🤣?
+          Create an account & become more productive. Use our AI powered app to
+          accomplish your tasks in bite sized chunks.
+        </pWrapper>
+      </GridItem>
       <GridItem>
         <FormWrapper>
           <FormGroup>

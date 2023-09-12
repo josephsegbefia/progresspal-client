@@ -24,7 +24,7 @@ const Navbar = () => {
 
   return (
     <NavbarWrapper isOpen={isOpened}>
-      <NavbarLogo href="#">Your Logo</NavbarLogo>
+      <NavbarLogo href="#">ProgressApp</NavbarLogo>
       <HamburgerMenu onClick={toggleNavbar}>
         <HamburgerLine isOpen={isOpened} />
         <HamburgerLine isOpen={isOpened} />
