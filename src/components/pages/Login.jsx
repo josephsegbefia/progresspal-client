@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import {
   FormGroup,
   FormWrapper,
@@ -6,35 +8,71 @@ import {
   InputWrapper,
   Input,
   SubmitButton,
-  SignUpWrapper,
-  GridItem,
-  Pwrapper,
   LoginWrapper
 } from "../styled/styled";
 
+const API_URL = "http://localhost:5005";
+
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const requestBody = { email, password };
+
+    axios
+      .post(`${API_URL}/auth/login`, requestBody)
+      .then((response) => {
+        console.log("JWT token", response.data.authToken);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    setEmail("");
+    setPassword("");
+  };
+
   return (
     <LoginWrapper>
-      {/* <FormWrapper> */}
-      <form>
-        <FormGroup>
-          <Label htmlFor="email">Email</Label>
-          <Input type="email" id="email" placeholder="example@gmail.com" />
-        </FormGroup>
-        <FormGroup>
-          <Label htmlFor="password">Password</Label>
-          <InputWrapper>
+      <FormWrapper>
+        <form onSubmit={handleSubmit}>
+          <FormGroup>
+            <Label htmlFor="email">Email</Label>
             <Input
-              //   type={passwordVisible ? "text" : "password"}
-              id="password"
-              placeholder="*******"
+              type="email"
+              id="email"
+              placeholder="example@gmail.com"
+              value={email}
+              onChange={handleEmailChange}
             />
-          </InputWrapper>
-        </FormGroup>
-
-        <SubmitButton type="submit">Submit</SubmitButton>
-      </form>
-      {/* </FormWrapper> */}
+          </FormGroup>
+          <FormGroup>
+            <Label htmlFor="password">Password</Label>
+            <InputWrapper>
+              <Input
+                id="password"
+                placeholder="*******"
+                value={password}
+                onChange={handlePasswordChange}
+              />
+            </InputWrapper>
+          </FormGroup>
+          <SubmitButton type="submit">Log In</SubmitButton>
+        </form>
+      </FormWrapper>
     </LoginWrapper>
   );
 };

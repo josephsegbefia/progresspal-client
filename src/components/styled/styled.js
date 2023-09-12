@@ -201,6 +201,11 @@ export const SubmitButton = styled.button`
   cursor: pointer;
   // font-weight: bold;
   font-family: "Courier Prime", sans-serif;
+
+  &:hover {
+    background: white;
+    color: ${teal};
+  }
 `;
 
 export const Pwrapper = styled.p`
