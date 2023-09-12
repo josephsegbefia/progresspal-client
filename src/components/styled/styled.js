@@ -175,7 +175,7 @@ export const FormGroup = styled.div`
 `;
 
 export const Label = styled.label`
-  color: ${teal};
+  color: white;
   font-weight: bold;
 `;
 
@@ -208,4 +208,25 @@ position: absolute,
 top: 50%,
 left: 50%,
 transform: translate(-50%, -50%)
+`;
+
+// Login Form
+export const LoginWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: ${teal};
+  color: white;
+  margin: 5rem;
+  padding: 20px;
+
+  border: 2px solid ${borderColor};
+
+  @media screen and (max-width: 992px) {
+    margin: 1rem;
+  }
+
+  @media screen and (max-width: 576px) {
+    margin: 1rem;
+  }
 `;

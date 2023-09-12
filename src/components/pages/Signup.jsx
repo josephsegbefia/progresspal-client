@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 import {
   FormGroup,
@@ -12,6 +14,8 @@ import {
   Pwrapper
 } from "../styled/styled";
 
+const API_URL = "http://localhost:5005";
+
 const SignUp = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
@@ -20,6 +24,8 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+
+  const navigate = useNavigate();
 
   const handleFirstNameChange = (e) => {
     setFirstName(e.target.value);
@@ -43,6 +49,19 @@ const SignUp = () => {
 
   const formSubmit = (e) => {
     e.preventDefault();
+
+    const requestBody = { firstName, lastName, email, password };
+
+    axios
+      .post(`${API_URL}/auth/signup`, requestBody)
+      .then((response) => {
+        console.log(response.data);
+        navigate("/login");
+      })
+      .catch((error) => {
+        // const errorDesc = error.response.data.message;
+        console.log(error);
+      });
   };
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
