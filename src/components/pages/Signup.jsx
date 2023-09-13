@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/auth.context";
 import axios from "axios";
 
 import {
@@ -22,6 +23,7 @@ const SignUp = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -56,7 +58,27 @@ const SignUp = () => {
       .post(`${API_URL}/auth/signup`, requestBody)
       .then((response) => {
         console.log(response.data);
-        navigate("/login");
+        const userId = response.data.user._id;
+        const user = response.data.user;
+        setUserId(userId);
+
+        const profileBody = {
+          firstName: user.firstName,
+          lastName: user.lastName,
+          occupation: "",
+          interests: [],
+          location: "",
+          avatarUrl: ""
+        };
+        axios
+          .post(`${API_URL}/api/profiles/${userId}`, profileBody)
+          .then((response) => {
+            console.log(response.data);
+            navigate("/login");
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       })
       .catch((error) => {
         // const errorDesc = error.response.data.message;
