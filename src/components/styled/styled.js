@@ -6,6 +6,7 @@ export const Wrapper = styled.section`
 `;
 
 const teal = "#008080";
+const coral = "#FF6B6B";
 
 // Styled components for the navigation bar
 export const NavbarWrapper = styled.div.attrs((props) => ({
@@ -234,4 +235,12 @@ export const LoginWrapper = styled.div`
   @media screen and (max-width: 576px) {
     margin: 1rem;
   }
+`;
+
+// Profile Page
+export const ProfileImageContainer = styled.div`
+  width: 20rem,
+  height: 20rem,
+  border-radius: 50%;
+  border: 1px solid ${coral};
 `;

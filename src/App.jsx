@@ -4,6 +4,7 @@ import Home from "./components/pages/Home";
 import SignUp from "./components/pages/Signup";
 import Login from "./components/pages/Login";
 import GlobalStyles from "./components/styled/global";
+import Profile from "./components/pages/Profile";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
+        <Route path="profile" element={<Profile />} />
       </Routes>
     </div>
   );
