@@ -238,9 +238,26 @@ export const LoginWrapper = styled.div`
 `;
 
 // Profile Page
+export const ProfileContainer = styled.div`
+  display: flex;
+  width: 80%;
+  // max-width: 600px;
+  margin: 0 auto;
+  border: 0.1px solid ${teal};
+  border-radius: 3rem;
+  justify-content: center;
+  padding: 2rem;
+  // align-items: center;
+  height: 100vh;
+`;
 export const ProfileImageContainer = styled.div`
-  width: 20rem,
-  height: 20rem,
+  display: flex;
+  justify-content: center;
+`;
+
+export const ProfileImage = styled.img`
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
-  border: 1px solid ${coral};
+  border: 2px solid ${coral};
 `;
