@@ -240,12 +240,13 @@ export const LoginWrapper = styled.div`
 // Profile Page
 export const ProfileContainer = styled.div`
   display: flex;
+  flex-direction: column;
   width: 80%;
   // max-width: 600px;
   margin: 0 auto;
   border: 0.1px solid ${teal};
   border-radius: 3rem;
-  justify-content: center;
+  // justify-content: center;
   padding: 2rem;
   // align-items: center;
   height: 100vh;
@@ -260,4 +261,15 @@ export const ProfileImage = styled.img`
   height: 200px;
   border-radius: 50%;
   border: 2px solid ${coral};
+`;
+
+export const ContactInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
+  border: 0.1px solid ${teal};
+  margin-top: 2rem;
+  padding: 3rem;
+  align-items: center;
 `;
