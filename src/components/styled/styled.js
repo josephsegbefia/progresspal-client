@@ -244,7 +244,7 @@ export const ProfileContainer = styled.div`
   width: 80%;
   // max-width: 600px;
   margin: 0 auto;
-  border: 0.1px solid ${teal};
+  // border: 0.1px solid ${teal};
   border-radius: 3rem;
   // justify-content: center;
   padding: 2rem;
@@ -268,8 +268,24 @@ export const ContactInfo = styled.div`
   flex-direction: column;
   width: 60%;
   margin: 0 auto;
-  border: 0.1px solid ${teal};
+  // border: 0.1px solid ${teal};
   margin-top: 2rem;
   padding: 3rem;
   align-items: center;
+`;
+
+export const ContactInfoButton = styled.button`
+  width: 60px;
+  height: 25px;
+  padding: 5px;
+  margin: 10px;
+
+  background-color: red;
+  color: white;
+  border: none;
+
+  &:hover {
+    color: ${coral};
+    background-color: white;
+  }
 `;

@@ -3,7 +3,8 @@ import {
   ProfileImageContainer,
   ProfileImage,
   ProfileContainer,
-  ContactInfo
+  ContactInfo,
+  ContactInfoButton
 } from "../styled/styled";
 
 const Profile = () => {
@@ -18,7 +19,10 @@ const Profile = () => {
       <ContactInfo>
         <h1>Name: Joseph Segbefia</h1>
         <h2>Email: elsegbefia@gmail.com</h2>
+        <h2>Occupation: Software Development</h2>
+        <h2>Location: Berlin, Germany</h2>
         <h2>Member Since: 20th Sept 2020</h2>
+        <ContactInfoButton>Edit</ContactInfoButton>
       </ContactInfo>
     </ProfileContainer>
   );
